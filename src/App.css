@@ -1,13 +1,19 @@
-.App {
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.App form {
+.app form {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 500px;
+}
+
+.result-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 20px 0;
 }

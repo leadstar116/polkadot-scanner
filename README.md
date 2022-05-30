@@ -1,4 +1,49 @@
-# Getting Started with Create React App
+# Polkadot Scanner
+
+This project is a simple Polkadot Blockchain Scanner web app that is able to scan & display events for the Polkadot Network.
+
+## Used Stacks:
+
+- React
+- Formik
+- Material UI
+- Polkadot.js
+
+## Main Functionalities of App
+
+1. Display a form with the following fields
+
+- Start block (required field)
+- End block (required field, default to the latest block number)
+- Endpoint (required field, default to wss://rpc.polkadot.io)
+- “Scan” button
+
+2. It has a basic error validation on all of the fields and display appropriate error messages
+
+3. After a user clicks the Scan button, start fetching events from the given endpoint, and display them in a result table
+
+4. Display a progress bar during the scanning process
+
+5. The results table should have the following details of the events
+
+- block number
+- event name
+- event index
+- event arguments
+
+6. Users are able to sort events on various columns
+
+7. Users are able to filter events by name
+
+## Screenshots
+
+<img src='https://tscscreencastlive.blob.core.windows.net/uploads/g0003016cPfgYv4HUS8VkgrTtQcTN/2022-05-31_00-31-04.png?sv=2019-07-07&sr=b&sig=Ic%2FUwLLuksHjwGtgT71K51Lvro8BgD3p3KtjsTL3M1k%3D&st=2022-05-30T14%3A26%3A37Z&se=2022-05-31T14%3A31%3A37Z&sp=r' />
+
+
+
+# Project Run
+
+Using node version 16 and `npm` for installing the dependencies.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

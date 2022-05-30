@@ -26,19 +26,28 @@ const inputFields: TextInputPropType[] = [
 ];
 
 const validationSchema = Yup.object({
-  startBlock: Yup.string()
-    .max(15, "Must be 15 characters or less")
-    .required("Required"),
-  endBlock: Yup.string()
-    .max(20, "Must be 20 characters or less")
-    .required("Required"),
+  startBlock: Yup.number().positive().required("Required"),
+  endBlock: Yup.number()
+    .positive()
+    .required("Required")
+    .when(["startBlock"], (startBlock: number) => {
+      return Yup.number().min(
+        startBlock,
+        "End Block should be equal or greater than Start block"
+      );
+    }),
   endpoint: Yup.string().required("Required"),
 });
 
 export const Form = (props: FormPropType) => {
   return (
     <Formik
-      initialValues={defaultFormValues}
+      enableReinitialize={true}
+      initialValues={{
+        startBlock: "0",
+        endBlock: props.latestBlock || "0",
+        endpoint: "wss://rpc.polkadot.io",
+      }}
       validationSchema={validationSchema}
       onSubmit={(values: IFormValues, { setSubmitting }) => {
         props.onSubmit(values);

@@ -1,4 +1,5 @@
 export type FormPropType = {
+  latestBlock: string;
   onSubmit: (values: IFormValues) => void;
 };
 
